@@ -1,0 +1,50 @@
+Lucky Duck identified losses on March 10, 12 and 15 on the Roulette tables. 
+Analysis of the Player data when the losses occurred indicated that there were 13 recorded loss periods during those three days.
+
+
+05:00:00 AM	-$82,348	Amirah Schneider,Nola Portillo, Mylie Schmidt,Suhayb Maguire,Millicent Betts,Avi Graves
+08:00:00 AM	-$97,383	Chanelle Tapia, Shelley Dodson , Valentino Smith, Mylie Schmidt
+02:00:00 PM	-$82,348	Jaden Clarkson, Kaidan Sheridan, Mylie Schmidt 
+08:00:00 PM	-$65,348        Mylie Schmidt, Trixie Velasquez, Jerome Klein ,Rahma Buckley
+11:00:00 PM	-$88,383	Mcfadden Wasim, Norman Cooper, Mylie Schmidt
+05:00:00 AM	-$182,300	Montana Kirk, Alysia Goodman, Halima Little, Etienne Brady, Mylie Schmidt
+08:00:00 AM	-$97,383        Rimsha Gardiner,Fern Cleveland, Mylie Schmidt,Kobe Higgins	
+02:00:00 PM	-$82,348        Mae Hail,  Mylie Schmidt,Ayden Beil	
+08:00:00 PM	-$65,792        Tallulah Rawlings,Josie Dawe, Mylie Schmidt,Hakim Stott, Esther Callaghan, Ciaron Villanueva	
+11:00:00 PM	-$88,229        Vlad Hatfield,Kerys Frazier,Mya Butler, Mylie Schmidt,Lex Oakley,Elin Wormald	
+05:00:00 AM	-$82,844        Arjan Guzman,Sommer Mann, Mylie Schmidt	
+08:00:00 AM	-$97,001        Lilianna Devlin,Brendan Lester, Mylie Schmidt,Blade Robertson,Derrick Schroeder	
+02:00:00 PM	-$182,419        Mylie Schmidt, Corey Huffman
+
+Preview of these results shows that Mylie Schmidt is common to the first few lines.
+Searching to see how many time periods Mylie Schmidt was playing during the losses was accomplished by using the following script:
+grep 'Mylie Schmidt' Roulette_Losses | wc -l
+The results of this scrip are listed below.
+
+13
+
+This confirms that Mylie Schmidt was playing Roulette on each time period that Lucky Duck had losses.
+
+Analysis of the dealers working the Roulette tables during the loss periods was performed using variations of the following scrip:
+grep 05:00:00 0310_Dealer_schedule | grep AM | awk '{print $1,$2,$5,$6}' 
+
+Changing the date, time and AM/PM for each loss period resulted in the following dealer(s) working at the Roulette Tables.
+
+05:00:00 AM Billy Jones
+08:00:00 AM Billy Jones
+02:00:00 PM Billy Jones
+08:00:00 PM Billy Jones
+11:00:00 PM Billy Jones
+05:00:00 AM Billy Jones
+08:00:00 AM Billy Jones
+02:00:00 PM Billy Jones
+08:00:00 PM Billy Jones
+11:00:00 PM Billy Jones
+05:00:00 AM Billy Jones
+08:00:00 AM Billy Jones
+02:00:00 PM Billy Jones
+13 Dealers_working_during_losses
+
+Thus Mylie Schmidt was playing Roulette, and Billy Jones was dealing Roulette at each of the 13 loss periods.
+
+The player analysis details can be found in Notes_Player_Analysis file. The Dealer Analysis details can be found in Notes_Dealer_Analysis file.
